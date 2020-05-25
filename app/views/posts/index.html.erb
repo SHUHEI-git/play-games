@@ -1,36 +1,4 @@
 <div class="wrapper">
-  <header>
-    <div class="header__box">
-      <%= link_to "", class: "header__box__logo" do %> 
-        <%= image_tag '/image/logo_2575767_web.png', class: "header__box__logo--image", alt: 'タイトルロゴ' %>
-      <% end %>
-      <ul class="header__box__list">
-        <li class="header__box__list__each">
-          <%= link_to "", class: "icon-link" do %>
-            <%= icon("fas", "list") + "投稿一覧" %>
-          <% end %>
-        </li>
-        <li class="header__box__list__each">
-          <%= link_to "", class: "icon-link" do %>
-            <%= icon("fas", "edit") + "新規投稿" %>
-          <% end %>
-        </li>
-        <li class="header__box__list__each">
-          <%= link_to "", class: "icon-link" do %>
-            <%= icon("fas", "user") + "ユーザー名" %>
-          <% end %>
-        </li>
-      </ul>
-      <%# 後でform_withにする %>
-      <div class="form">
-        <form action="#" method="GET" class="form__search">
-          <input class="form__search--text" type="text" placeholder="募集検索">
-          <input class="form__search--submit" type="submit" value="検索">
-        </form>
-      </div>
-    </div>
-  </header>
-
   <div class="main">
     <div class="container main__content">
       <div class="main__content__title">
@@ -72,10 +40,4 @@
       </div>
     </div>
   </div>
-
-  <footer class="footer">
-    <div class="footer__item">
-      <p class="item-p">Copyright © 2020 PLAYGAMES All Rights Reserved.</p>
-    </div>
-  </footer>
 </div>
