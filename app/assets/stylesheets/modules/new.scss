@@ -16,3 +16,11 @@
     }
   }
 }
+
+// createレイアウト
+.create_page {
+  flex: 1;
+  &__title {
+    padding: 15px;
+  }
+}

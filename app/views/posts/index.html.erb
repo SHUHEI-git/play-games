@@ -4,38 +4,18 @@
       <h2 class="title_name">最近の募集</h2>
     </div>
     <div class="row">
-      <div class="col-sm-12 col-md-6 col-lg-3 main__content__box">
-        <div class="rounded main__content__box__field">
-          <p class="main__content__box__field--name">ユーザー名</p>
-          <p class="main__content__box__field--title">ゲームタイトル</p>
-          <p class="main__content__box__field--content">内容</p>
-          <p class="main__content__box__field--date">投稿日</p>
+      <% @posts.each do |post| %>
+        <div class="col-sm-12 col-md-6 col-lg-3 main__content__box">
+          <div class="rounded main__content__box__field">
+            <div class="main__content__box__field__user">
+              <p class="box__field__user--name">ユーザー名</p>
+              <p class="box__field__user--date"><%= post.created_at.to_s(:datetime_jp) %></p>
+            </div>
+            <p class="main__content__box__field--title"><%= post.title %></p>
+            <%= simple_format(post.body, class: "main__content__box__field--content") %>
+          </div>
         </div>
-      </div>
-      <div class="col-sm-12 col-md-6 col-lg-3 main__content__box">
-        <div class="rounded main__content__box__field">
-          <p class="main__content__box__field--name">ユーザー名</p>
-          <p class="main__content__box__field--title">タイトル</p>
-          <p class="main__content__box__field--content">内容</p>
-          <p class="main__content__box__field--date">投稿日</p>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-6 col-lg-3 main__content__box">
-        <div class="rounded main__content__box__field">
-          <p class="main__content__box__field--name">ユーザー名</p>
-          <p class="main__content__box__field--title">タイトル</p>
-          <p class="main__content__box__field--content">内容</p>
-          <p class="main__content__box__field--date">投稿日</p>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-6 col-lg-3 main__content__box">
-        <div class="rounded main__content__box__field">
-          <p class="main__content__box__field--name">ユーザー名</p>
-          <p class="main__content__box__field--title">タイトル</p>
-          <p class="main__content__box__field--content">内容</p>
-          <p class="main__content__box__field--date">投稿日</p>
-        </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
