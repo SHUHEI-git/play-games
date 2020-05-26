@@ -3,34 +3,24 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // Top
-.wrapper {
-  min-height: 100vh;
+.main {
   display: flex;
-  flex-direction: column;
-  
-  @import "./header.scss";
-  
-  .main {
-    display: flex;
+  flex: 1;
+  background-color: #F8F8ff;
+  &__content {
     flex: 1;
-    background-color: #F8F8ff;
-    &__content {
-      flex: 1;
-      &__title {
-        margin: 15px;
-        text-align: center;
-      }
-      &__box {
-        padding: 15px;
-        &__field {
-          height: 250px;
-          border: 1px #b0c4de solid;
-          background-color: #fff;
-          box-shadow: 10px 10px 15px -10px;
-        }
+    &__title {
+      margin: 15px;
+      text-align: center;
+    }
+    &__box {
+      padding: 15px;
+      &__field {
+        height: 250px;
+        border: 1px #b0c4de solid;
+        background-color: #fff;
+        box-shadow: 10px 10px 15px -10px;
       }
     }
   }
-
-  @import "./footer.scss";
 }

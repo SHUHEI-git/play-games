@@ -1,7 +1,18 @@
-.form__title {
-  
+.new_post {
+  flex: 1;
+  background-color: #F8F8ff;
+  .form__title {
+    height: 50px;
+    text-align: center;
+    margin: 15px;
+  }
+  .new__form {
+    margin-bottom: 20px;
+    #content-box--text {
+      height: 200px;
+    }
+    .btn-primary {
+      width: 150px;
+    }
+  }
 }
-
-// .new__form {
-  
-// }

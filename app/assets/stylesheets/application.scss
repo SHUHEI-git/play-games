@@ -14,6 +14,8 @@
  @import "bootstrap";
  @import "font-awesome-sprockets";
  @import "font-awesome";
+ @import "./modules/base.scss";
  @import "./modules/header.scss";
  @import "./modules/footer.scss";
  @import "./modules/posts.scss";
+ @import "./modules/new.scss";

@@ -1,33 +1,35 @@
-<div class="form__title">
-  <h3>新規募集<h3>
-</div>
+<div class="new_post">
+  <div class="form__title">
+    <h3>新規募集<h3>
+  </div>
 
-<div class="row">
-  <div class="col-md-6 offset-md-3 new__form">
-    <%= form_with model: @post, local: true do |f| %>
-    <%# <%= render 'shared/error_messages' %> 
-      <div class="form-group new__form__title-box">
-        <%= f.label :game_title, "ゲームタイトル", class: "new__form__title-box--title" %>
-        <%= f.text_field :title, class: "form-control" %>
-      </div>
-      <div class="form-group new__form__content-box">
-        <%= f.label :content, "募集内容", class: "new__form__content-box--content" %>
-        <%= f.text_area :body, class: "form-control" %>
-      </div>
-      <div class="form-group new__form__code-box">
-        <%= f.label :code, "招待コード", class: "new__form__code-box--code" %>
-        <%= f.text_field :invitation, class: "form-control", placeholder: "フレンドコードなど" %>
-      </div>
-      <div class="form-group new__form__image-box">
-        <%= f.label :inputfile, "画像を選択", class: "new__form__image-box--image"%>
-        <%# <div class="custom-file"> %>
-        <%= f.file_field :image, class: "custom-file-input" %>
-          <%# <% label class: "custom-file-label" for="inputfile" %> 
-        <%# </div> %>
-      </div>
-      <div class="form-group text-center">
-        <%= f.submit "投稿", class: "btn btn-primary" %>
-      </div>
-    <% end %>
+  <div class="row">
+    <div class="col-md-6 offset-md-3 new__form">
+      <%= form_with model: @post, local: true do |f| %>
+      <%# <%= render 'shared/error_messages' %> 
+        <div class="form-group new__form__title-box">
+          <%= f.label :game_title, "ゲームタイトル", class: "new__form__title-box--title" %>
+          <%= f.text_field :title, class: "form-control" %>
+        </div>
+        <div class="form-group new__form__content-box">
+          <%= f.label :content, "募集内容", class: "new__form__content-box--content" %>
+          <%= f.text_area :body, class: "form-control", id: "content-box--text" %>
+        </div>
+        <div class="form-group new__form__code-box">
+          <%= f.label :code, "招待コード", class: "new__form__code-box--code" %>
+          <%= f.text_field :invitation, class: "form-control", placeholder: "フレンドコードなど" %>
+        </div>
+        <div class="form-group new__form__image-box">
+          <%= f.label :inputfile, "画像を選択", class: "new__form__image-box--image"%>
+          <div class="custom-file">
+            <%= f.file_field :image, class: "custom-file-input" %>
+            <label class="custom-file-label" for="inputfile">画像選択</label>
+          </div>
+        </div>
+        <div class="form-group text-center">
+          <%= f.submit "投稿", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
