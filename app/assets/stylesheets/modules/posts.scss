@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column;
   
-  
+  @import "./header.scss";
   
   .main {
     display: flex;
@@ -24,11 +24,13 @@
         padding: 15px;
         &__field {
           height: 250px;
-          border: 1px solid;
-          background-color: #e7ecf0;
-          box-shadow: 7px 7px 1px 0 #e7ecf0;
+          border: 1px #b0c4de solid;
+          background-color: #fff;
+          box-shadow: 10px 10px 15px -10px;
         }
       }
     }
   }
+
+  @import "./footer.scss";
 }
