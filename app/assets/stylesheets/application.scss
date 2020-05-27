@@ -10,12 +10,9 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  */
- @import "reset";
  @import "bootstrap";
  @import "font-awesome-sprockets";
  @import "font-awesome";
- @import "./modules/base.scss";
- @import "./modules/header.scss";
- @import "./modules/footer.scss";
- @import "./modules/posts.scss";
- @import "./modules/new.scss";
+ @import "reset";
+ @import "./modules/base";
+ @import "./modules/posts";
