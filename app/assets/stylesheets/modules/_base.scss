@@ -2,10 +2,12 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: #F8F8ff;
 }
 
 .header__box {
   height: 56px;
+  background-color: white;
   border-bottom: 1px solid #D3D3D3;
   display: flex;
   &__logo--image {
@@ -19,6 +21,13 @@ body {
     padding: 8px 0;
     &__each {
       padding: 8px;
+      .icon-link {
+        color: black;
+        &:hover {
+          color: #1E90FF;
+          text-decoration : none
+        }
+      }
     }
 
   }
@@ -39,6 +48,7 @@ body {
 
 .footer {
   height: 56px;
+  background-color: white;
   border-top: 0.5px solid #D3D3D3;
   &__item {
     line-height: 56px;

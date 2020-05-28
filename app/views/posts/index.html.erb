@@ -1,7 +1,9 @@
 <div class="main">
   <div class="container main__content">
     <div class="main__content__title">
-      <h2 class="title_name">最近の募集</h2>
+      <h2 class="title_name">
+        <%= icon("far", "clone") + "新着募集" %>
+      </h2>
     </div>
     <div class="row">
       <% @posts.each do |post| %>
@@ -11,11 +13,16 @@
               <p class="box__field__user--name">ユーザー名</p>
               <p class="box__field__user--date"><%= post.created_at.to_s(:datetime_jp) %></p>
             </div>
-            <p class="main__content__box__field--title"><%= post.title %></p>
+            <div class="main__content__box__field--title">
+              <p><%= post.title %></p>
+            </div>
             <%= simple_format(post.body, class: "main__content__box__field--content") %>
+            <div class="main__content__box__field--comment">
+              <%= icon("far", "comment-dots") + "コメント○件"%>
+            </div>
           </div>
         </div>
-      <% end %>
+      <% end %> 
     </div>
   </div>
 </div>
