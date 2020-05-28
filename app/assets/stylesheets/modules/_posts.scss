@@ -1,0 +1,96 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Top
+.main {
+  display: flex;
+  flex: 1;
+  background-color: #F8F8ff;
+  &__content {
+    flex: 1;
+    &__title {
+      margin: 15px;
+      text-align: center;
+      color: #1E90FF;
+      .fa-clone {
+        margin-right: 5px;
+      }
+    }
+    &__box {
+      padding: 15px;
+      &__field {
+        height: 250px;
+        padding: 0 5px;
+        border: 1px #b0c4de solid;
+        background-color: #fff;
+        box-shadow: 10px 10px 15px -10px;
+        position: relative;
+        &__user {
+          display: flex;
+          justify-content: space-between;
+          font-size: 8px;
+          border-bottom: 0.5px #b0c4de solid;
+          height: 30px;
+          line-height: 30px;
+          &--name {
+            font-size: 12px;
+          }
+        }
+        &--title {
+          text-align: center;
+          p {
+            margin: auto;
+            padding: 5px;
+          }
+        }
+        &--comment {
+          position: absolute;
+          bottom: 0;
+          color: #A9A9A9;
+        }
+      }
+    }
+  }
+}
+
+// 新規投稿
+.new_post {
+  flex: 1;
+  background-color: #F8F8ff;
+  .form__title {
+    height: 50px;
+    color: #1E90FF;
+    text-align: center;
+    margin-top: 15px;
+  }
+  .new__form {
+    margin-bottom: 20px;
+    &__box {
+      padding: 10px;
+      border: 1px #b0c4de solid;
+      background-color: #fff;
+      box-shadow: 10px 10px 15px -10px;
+      #content-box--text {
+        height: 200px;
+      }
+      .btn-primary {
+        width: 150px;
+        box-shadow: 0 5px #191970;
+        &:active {
+          position: relative;
+          top: 7px;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}
+
+// create画面
+.create_page {
+  flex: 1;
+  &__title {
+    padding: 15px;
+  }
+}
