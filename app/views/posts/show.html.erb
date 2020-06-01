@@ -1,0 +1,41 @@
+<div class="container post_show">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="post_show__details">
+        <%= link_to "編集", class:'post_show__details--edit' %>
+        <%= link_to "削除", class:'post_show__details--delete' %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 offset-md-2 post_show__area">
+      <div class="user_icon">
+        <a>アイコン</a>
+        <a>名前</a>
+      </div>
+      <p><%= @post.created_at.to_s(:datetime_jp) %></p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="show__box">
+        <div class="show__box__content">
+          <%= icon("fas", "gamepad") + " タイトル" %> 
+          <p class="show__box__content__list"><%= @post.title %></p>
+        </div>
+        <div class="show__box__content">
+          <%= icon("fas", "scroll") + " 募集内容" %>
+          <p class="show__box__content__list body_height"><%= @post.body %></p>
+        </div>
+        <div class="show__box__content">
+          <%= icon("fas", "child") + " 招待コード" %>
+          <p class="show__box__content__list"><%= @post.invitation %></p>
+        </div>
+        <div class="show__box__image">
+          <p>画像</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

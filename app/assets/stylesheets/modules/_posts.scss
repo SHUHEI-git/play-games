@@ -12,17 +12,21 @@
     &__title {
       margin: 15px;
       text-align: center;
-      color: #1E90FF;
+      color: black;
       .fa-clone {
         margin-right: 5px;
       }
     }
     &__box {
       padding: 15px;
+      & a {
+        text-decoration: none;
+        color: black;
+      }
       &__field {
         height: 250px;
         padding: 0 5px;
-        border: 1px #b0c4de solid;
+        border: 1px black solid;
         background-color: #fff;
         box-shadow: 10px 10px 15px -10px;
         position: relative;
@@ -57,10 +61,9 @@
 // 新規投稿
 .new_post {
   flex: 1;
-  background-color: #F8F8ff;
   .form__title {
     height: 50px;
-    color: #1E90FF;
+    color: black;
     text-align: center;
     margin-top: 15px;
   }
@@ -68,7 +71,7 @@
     margin-bottom: 20px;
     &__box {
       padding: 10px;
-      border: 1px #b0c4de solid;
+      border: 1px black solid;
       background-color: #fff;
       box-shadow: 10px 10px 15px -10px;
       #content-box--text {
@@ -92,5 +95,43 @@
   flex: 1;
   &__title {
     padding: 15px;
+  }
+}
+
+// 投稿詳細画面
+.post_show {
+  flex: 1;
+  &__details{
+    display: flex;
+    justify-content: flex-end;
+    & a {
+      margin: 5px;
+      width: 60px;
+      height: 30px;
+      text-align: center;
+      line-height: 30px;
+      border-radius: 5px;
+      background-color: #6495ED;
+      color: #fff;
+      text-decoration : none
+    }
+  }
+  &__area {
+    display: flex;
+    justify-content: space-between;
+  }
+  .show__box {
+    & i {
+      color: #1E90FF;
+    }
+    &__content__list {
+      background-color: #fff;
+      border: 0.5px #b0c4de solid;
+      border-radius: 5px;
+      padding: 5px;
+    }
+    .body_height {
+      height: 250px;
+    }
   }
 }
