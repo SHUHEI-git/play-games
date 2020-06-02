@@ -6,19 +6,36 @@
     <ul class="header__box__list">
       <li class="header__box__list__each">
         <%= link_to root_path, class: "icon-link" do %>
-          <%= icon("fas", "list") + "投稿一覧" %>
+          <%= icon("fas", "list") %>
+          <%= "投稿一覧" %>
         <% end %>
       </li>
-      <li class="header__box__list__each">
-        <%= link_to new_post_path, class: "icon-link" do %>
-          <%= icon("fas", "edit") + "新規投稿" %>
-        <% end %>
-      </li>
-      <li class="header__box__list__each">
-        <%= link_to "", class: "icon-link" do %>
-          <%= icon("fas", "user") + "ユーザー名" %>
-        <% end %>
-      </li>
+      <% if user_signed_in? %>
+        <li class="header__box__list__each">
+          <%= link_to new_post_path, class: "icon-link" do %>
+            <%= icon("fas", "edit") %>
+            <%= "新規投稿" %>
+          <% end %>
+        </li>
+        <li class="header__box__list__each">
+          <%= link_to "", class: "icon-link" do %>
+            <%= icon("fas", "user") + " ユーザー名" %>
+          <% end %>
+        </li>
+      <% else %>
+        <li class="header__box__list__each">
+          <%= link_to "", class: "icon-link" do %>
+            <%= icon("fas", "sign-in-alt") %>
+            <%= "ログイン" %>
+          <% end %>
+        </li>
+        <li class="header__box__list__each">
+          <%= link_to "", class: "icon-link" do %>
+            <%= icon("fas", "user-plus") %>
+            <%= " 新規登録" %>
+          <% end %>
+        </li>
+      <% end %>
     </ul>
     <%# 後でform_withにする %>
     <div class="form">
