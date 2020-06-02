@@ -12,7 +12,7 @@
     &__title {
       margin: 15px;
       text-align: center;
-      color: black;
+      color: #000;
       .fa-clone {
         margin-right: 5px;
       }
@@ -21,12 +21,12 @@
       padding: 15px;
       & a {
         text-decoration: none;
-        color: black;
+        color: #000;
       }
       &__field {
         height: 250px;
         padding: 0 5px;
-        border: 1px black solid;
+        border: 1px #000 solid;
         background-color: #fff;
         box-shadow: 10px 10px 15px -10px;
         position: relative;
@@ -63,7 +63,7 @@
   flex: 1;
   .form__title {
     height: 50px;
-    color: black;
+    color: #000;
     text-align: center;
     margin-top: 15px;
   }
@@ -71,7 +71,7 @@
     margin-bottom: 20px;
     &__box {
       padding: 10px;
-      border: 1px black solid;
+      border: 1px #000 solid;
       background-color: #fff;
       box-shadow: 10px 10px 15px -10px;
       #content-box--text {
@@ -90,11 +90,24 @@
   }
 }
 
-// create画面
-.create_page {
+// お知らせ画面
+.confirmation_page {
   flex: 1;
-  &__title {
-    padding: 15px;
+  &__box {
+    padding: 10px;
+    border: 1px #000 solid;
+    background-color: #fff;
+    box-shadow: 10px 10px 15px -10px;
+    margin: 15px;
+    &__title {
+      height: 70px;
+      text-align: center;
+      margin-top: 50px;
+    }
+    &__btn {
+      background-color: #6495ED;
+      color: #fff;
+    }
   }
 }
 

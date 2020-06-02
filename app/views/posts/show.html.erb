@@ -2,8 +2,8 @@
   <div class="row">
     <div class="col-md-8 offset-md-2">
       <div class="post_show__details">
-        <%= link_to "編集", class:'post_show__details--edit' %>
-        <%= link_to "削除", class:'post_show__details--delete' %>
+        <%= link_to "編集", "/posts/#{@post.id}/edit", method: :get, class:'post_show__details--edit' %>
+        <%= link_to "削除", "/posts/#{@post.id}", method: :delete, class:'post_show__details--delete' %>
       </div>
     </div>
   </div>
