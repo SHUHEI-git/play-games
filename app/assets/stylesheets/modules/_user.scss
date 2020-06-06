@@ -1,0 +1,64 @@
+// 新規登録
+.sign_up {
+  flex: 1;
+  &__title {
+    height: 50px;
+    color: #000;
+    margin: 15px auto 0;
+  }
+  .user_form {
+    margin-bottom: 20px;
+    &__inner {
+      padding: 10px;
+      background-color: #fff;
+      &__box {
+        &--input {
+          border: 1px #ccc solid;
+          border-radius: 4px;
+          width: 100%;
+        }
+        span {
+          background: #ea352d;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          color: #fff;
+          font-size: 12px;
+        }
+        .form-optional {
+          background: #bfbfbfbb;
+        }
+      }
+      .btn-primary {
+        @include btn-active();
+      }
+    }
+  }
+}
+
+// ログイン
+.login {
+  flex: 1;
+  &__title {
+    height: 50px;
+    color: #000;
+    margin: 15px auto 0;
+  }
+  .user_form {
+    margin-bottom: 20px;
+    &__inner {
+      padding: 10px;
+      background-color: #fff;
+      &__box {
+        &--input {
+          border: 1px #ccc solid;
+          border-radius: 4px;
+          width: 100%;
+        }
+      }
+      .btn-primary {
+        @include btn-active();
+      }
+    }
+  }
+}

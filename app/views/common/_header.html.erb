@@ -24,7 +24,7 @@
         </li>
       <% else %>
         <li class="header__box__list__each">
-          <%= link_to "", class: "icon-link" do %>
+          <%= link_to new_user_session_path, class: "icon-link" do %>
             <%= icon("fas", "sign-in-alt") %>
             <%= "ログイン" %>
           <% end %>
