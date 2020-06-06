@@ -1,34 +1,63 @@
-<div class="container sign_up__container">
+<div class="container sign_up">
   <div class="row">
     <div class="sign_up__title">
-      <h2>Sign up</h2>
+      <h3>ユーザー新規登録</h3>
     </div>
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
+  </div>
 
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="row">
+    <div class="col-md-6 offset-md-3 user_form">
+      <div class="user_form__inner">
+        <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+          <%= devise_error_messages! %>
+
+          <div class="form-group user_form__inner__box">
+            <%= f.label :name, "ニックネーム" %>
+            <span class="form-require">必須</span><br />
+            <%= f.text_field :name, autofocus: true, class: "user_form__inner__box--input" %>
+          </div>
+
+          <div class="form-group user_form__inner__box">
+            <%= f.label :email, "メールアドレス" %>
+            <span class="form-require">必須</span><br />
+            <%= f.email_field :email, class: "user_form__inner__box--input" %>
+          </div>
+
+          <div class="form-group user_form__inner__box">
+            <%= f.label :password, "パスワード" %>
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> 文字以上)</em>
+            <span class="form-require">必須</span><br />
+            <% end %>
+            <%= f.password_field :password, autocomplete: "new-password", class: "user_form__inner__box--input" %>
+          </div>
+
+          <div class="form-group user_form__inner__box">
+            <%= f.label :password_confirmation, "パスワード確認" %>
+            <span class="form-require">必須</span><br />
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "user_form__inner__box--input" %>
+          </div>
+          
+          <div class="form-group user_form__inner__box">
+            <%= f.label :code, "フレンドコード" %>
+            <span class="form-optional">任意</span><br />
+            <%= f.text_field :friend_code, class: "user_form__inner__box--input" %>
+          </div>
+
+          <div class="form-group user_form__inner__box">
+            <%= f.label :inputfile, "画像を選択", class: "user_form__inner__box--image"%>
+            <span class="form-optional">任意</span><br />
+            <div class="custom-file">
+              <%= f.file_field :image, class: "custom-file-input" %>
+              <label class="custom-file-label" for="inputfile">画像選択</label>
+            </div>
+          </div>
+
+          <div class="form-group text-center">
+            <%= f.submit "登録する", class: "btn btn-primary" %>
+          </div>
+        <% end %>
       </div>
-
-      <div class="field">
-        <%= f.label :password %>
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "new-password" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-      </div>
-
-      <div class="actions">
-        <%= f.submit "Sign up" %>
-      </div>
-    <% end %>
-
-    <%= render "devise/shared/links" %>
+    </div>
   </div>
 </div>
