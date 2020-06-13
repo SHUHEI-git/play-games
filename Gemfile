@@ -67,3 +67,6 @@ gem "font-awesome-sass"
 gem 'mini_racer'
 gem 'devise'
 gem 'data-confirm-modal'
+gem 'carrierwave'
+gem 'active_hash'
+gem 'fog-aws'
