@@ -1,17 +1,26 @@
 <div class="container post_show">
   <div class="row">
     <div class="col-md-8 offset-md-2">
-      <div class="post_show__details">
-        <%= link_to "編集", "/posts/#{@post.id}/edit", method: :get, class:'post_show__details--edit' %>
-        <%= link_to "削除", "/posts/#{@post.id}", method: :delete, class:'post_show__details--delete' %>
-      </div>
+      <% if user_signed_in? && current_user.id == @post.user_id %>
+        <div class="post_show__details">
+          <%= link_to "編集", "/posts/#{@post.id}/edit", method: :get, class:'post_show__details--edit' %>
+          <%= link_to "削除", "/posts/#{@post.id}", method: :delete, class:'post_show__details--delete' %>
+        </div>
+      <% end %>
     </div>
   </div>
   <div class="row">
     <div class="col-md-8 offset-md-2 post_show__area">
-      <div class="user_icon">
-        <a>アイコン</a>
-        <a>名前</a>
+      <div class="post_show__area__user">
+        <%= link_to user_path(@post), class: "post_show__area__user__link" do %>
+          <% if @post.user.image? %>
+            <img src='<%= @post.user.image %>' class="rounded-circle user_icon" alt="ユーザーアイコン">
+          <% else %>
+            <img src="/assets/default.png" class="rounded-circle user_icon" alt="ユーザーアイコン">
+          <% end %>
+          <%= @post.user.name %>
+        <% end %>
+        </a>
       </div>
       <p><%= @post.created_at.to_s(:datetime_jp) %></p>
     </div>

@@ -19,7 +19,7 @@
         </li>
         <li class="header__box__list__each user_name">
           <%= icon("fas", "user") %>
-          <%= "マイページ" %>
+          <%= current_user.name %>
           <div class="user_link">
             <p class="user_link__inner user_link__inner--top">
               <%= link_to "マイページ", user_path(current_user.id) %>
