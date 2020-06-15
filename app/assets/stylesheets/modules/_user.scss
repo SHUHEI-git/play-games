@@ -63,3 +63,55 @@
     }
   }
 }
+
+// user詳細画面
+.user_show {
+  flex: 1;
+  .user_top {
+    &__icon {
+      text-align: center;
+      &--image{
+        width: 150px;
+        height: 150px;
+      }
+    }
+    &__item {
+      padding: 30px 15px;
+      &__name {
+        font-size: 30px;
+      }
+    }
+  }
+  .user_conts {
+    &__box {
+      padding: 15px;
+      &__link {
+        text-decoration: none;
+        color: #000;
+        &__field {
+          height: 250px;
+          padding: 0 5px;
+          border: 1px #000 solid;
+          background-color: #fff;
+          box-shadow: 10px 10px 15px -10px;
+          position: relative;
+          &--title {
+            text-align: center;
+            & p {
+              margin: auto;
+              padding: 5px;
+            }
+          }
+          &--comment {
+            position: absolute;
+            bottom: 0;
+            color: #A9A9A9;
+          }
+        }
+      }
+    }
+  }
+  .nav-link {
+    color: #495057;
+  }
+}

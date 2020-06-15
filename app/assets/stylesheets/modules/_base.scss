@@ -2,12 +2,13 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #F8F8ff;
+  background-color: #f7f7f7;
 }
 
+// header
 .header__box {
   height: 56px;
-  background-color: white;
+  background-color: #fff;
   border-bottom: 1px solid #D3D3D3;
   display: flex;
   &__logo--image {
@@ -26,6 +27,31 @@ body {
         &:hover {
           color: #1E90FF;
           text-decoration : none
+        }
+      }
+    }
+    .user_name {
+      position: relative;
+      cursor: pointer;
+      &:hover {
+        color: #1E90FF;
+      }
+      .user_link {
+        background-color: #f7f7f7;
+        box-shadow: 10px 10px 15px -10px;
+        height: 70px;
+        text-align: center;
+        border: 0.5px #C0C0C0 solid;
+        display: none;
+        &__inner {
+          margin: 0;
+          padding: 5px 0 5px 0;
+          &--top {
+            border-bottom: 0.5px #C0C0C0 solid;
+          }
+          & a {
+            color: #000;
+          }
         }
       }
     }

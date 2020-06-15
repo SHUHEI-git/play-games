@@ -6,7 +6,6 @@
 .main {
   display: flex;
   flex: 1;
-  background-color: #F8F8ff;
   &__content {
     flex: 1;
     &__title {
@@ -37,8 +36,15 @@
           border-bottom: 0.5px #b0c4de solid;
           height: 30px;
           line-height: 30px;
+          & span {
+            .user_icon {
+              width: 30px;
+              height: 30px;
+            }
+          }
           &--name {
             font-size: 12px;
+            margin-right: auto;
           }
         }
         &--title {
