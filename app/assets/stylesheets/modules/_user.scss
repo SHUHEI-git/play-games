@@ -68,13 +68,18 @@
 .user_show {
   flex: 1;
   .user_top {
-    padding: 15px 0 0 0;
     &__icon {
       text-align: center;
       &--image{
         width: 150px;
         height: 150px;
         border: 0.5px #000 solid;
+      }
+    }
+    &__item {
+      padding: 30px 15px;
+      &__name {
+        font-size: 30px;
       }
     }
   }
@@ -106,5 +111,8 @@
         }
       }
     }
+  }
+  .nav-link {
+    color: #495057;
   }
 }

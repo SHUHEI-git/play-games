@@ -1,4 +1,4 @@
-<div class="container user_show">
+<div class="container mt-5 user_show">
   <div class="row user_top">
     <div class="col-sm-12 col-md-5 user_top__icon">
       <% if @user.image? %>
@@ -7,22 +7,22 @@
         <img src="/assets/default.png" class="rounded-circle user_top__icon--image" alt="ユーザーアイコン">
       <% end %>
     </div>
-    <div class="col-sm-12 col-md-7">
-      <p><%= @user.name %></p>
+    <div class="col-sm-12 col-md-7 user_top__item">
+      <p class="user_top__item__name"><%= @user.name %></p>
       <p><%= "フレンドコード：#{@user.friend_code}" %></p>
     </div>
   </div>
 
   <ul class="nav nav-tabs">
     <li class="nav-item">
-      <a class="nav-link active">
+      <a href="#post" class="nav-link active">
         <div class="user-status">
           <span class="user-status__name">投稿</span>
         </div>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link active">
+      <a href="#" class="nav-link">
         <div class="user-status">
           <span class="user-status__name">いいね</span>
         </div>
@@ -30,9 +30,9 @@
     </li>
   </ul>
 
-  <div class="row user_conts">
+  <div class="row tab-content user_conts">
     <% @posts.each do |post| %>
-      <div class="col-sm-12 col-md-6 col-lg-4 user_conts__box">
+      <div class="col-sm-12 col-md-6 col-lg-4 user_conts__box tab-pane active" id="post">
         <%= link_to "/posts/#{post.id}",class: "user_conts__box__link", method: :get do %>
           <div class="rounded user_conts__box__link__field">
             <div class="user_conts__box__link__field--title">

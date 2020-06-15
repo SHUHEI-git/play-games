@@ -2,13 +2,13 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #F8F8ff;
+  background-color: #f7f7f7;
 }
 
 // header
 .header__box {
   height: 56px;
-  background-color: white;
+  background-color: #fff;
   border-bottom: 1px solid #D3D3D3;
   display: flex;
   &__logo--image {
@@ -34,7 +34,7 @@ body {
       position: relative;
       cursor: pointer;
       .user_link {
-        background-color: #f8f8ff;
+        background-color: #f7f7f7;
         box-shadow: 10px 10px 15px -10px;
         height: 70px;
         text-align: center;
