@@ -45,11 +45,16 @@
           </div>
 
           <div class="form-group user_form__inner__box">
-            <%= f.label :inputfile, "画像を選択", class: "user_form__inner__box--image"%>
+            <%= f.label :inputfile, "画像を選択", class: "label-name"%>
             <span class="form-optional">任意</span><br />
-            <div class="custom-file">
-              <%= f.file_field :image, class: "custom-file-input" %>
-              <label class="custom-file-label" for="inputfile">画像選択</label>
+            <div class="input-group" id="file">
+              <div class="custom-file">
+                <%= f.file_field :image, class: "custom-file-input", id: "cutomfile", accept: "image/*", name: "cutomfile[]" %>
+                <label class="custom-file-label" for="customfile" data-browse="参照">ファイル1つ選択...</label>
+              </div>
+              <div class="input-group-append">
+                <button type="button" class="btn btn-outline-secondary reset">取消</button>
+              </div>
             </div>
           </div>
 

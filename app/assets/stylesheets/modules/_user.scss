@@ -29,6 +29,12 @@
         .form-optional {
           background: #bfbfbfbb;
         }
+        .custom-file {
+          overflow: hidden;
+        }
+        .custom-file-label {
+          white-space: nowrap;
+        }
       }
       .btn-primary {
         @include btn-active();

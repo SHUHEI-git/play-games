@@ -14,7 +14,7 @@
       <div class="post_show__area__user">
         <%= link_to user_path(@post), class: "post_show__area__user__link" do %>
           <% if @post.user.image? %>
-            <img src='<%= @post.user.image %>' class="rounded-circle user_icon" alt="ユーザーアイコン">
+            <img src='<%= @post.user.image.url %>' class="rounded-circle user_icon" alt="ユーザーアイコン">
           <% else %>
             <img src="/assets/default.png" class="rounded-circle user_icon" alt="ユーザーアイコン">
           <% end %>
@@ -42,7 +42,7 @@
           <p class="show__box__content__list"><%= @post.invitation %></p>
         </div>
         <div class="show__box__image">
-          <p>画像</p>
+          <p><%= image_tag(@post.image) %></p>
         </div>
       </div>
     </div>
