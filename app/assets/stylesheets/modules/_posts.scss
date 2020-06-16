@@ -80,6 +80,46 @@
       border: 1px #000 solid;
       background-color: #fff;
       box-shadow: 10px 10px 15px -10px;
+      .image_file {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        #input_file {
+          width: 100px;
+          height: 100px;
+          opacity: 0;
+        }
+        #input_file:focus {
+          opacity: 1;
+        }
+        #preview_field {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100px;
+          height: 100px;
+        }
+        #drop_area {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100px;
+          height: 100px;
+          border: 1px dashed #aaa;
+          cursor: pointer;
+        }
+        #icon_clear_button {
+          display: none;
+          position: absolute;
+          top: -4px;
+          right: -8px;
+          width: 24px;
+          height: 24px;
+          border: 1px solid #777;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+      }
       #content-box--text {
         height: 200px;
       }
