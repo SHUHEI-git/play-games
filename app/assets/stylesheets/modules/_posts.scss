@@ -80,44 +80,24 @@
       border: 1px #000 solid;
       background-color: #fff;
       box-shadow: 10px 10px 15px -10px;
-      .image_file {
-        position: relative;
-        width: 100px;
-        height: 100px;
-        #input_file {
-          width: 100px;
-          height: 100px;
-          opacity: 0;
+      span {
+        background: #ea352d;
+        margin: 0 0 0 8px;
+        padding: 2px 4px;
+        border-radius: 2px;
+        color: #fff;
+        font-size: 12px;
+      }
+      .form-optional {
+        background: #bfbfbfbb;
+      }
+      &__image {
+        margin: 0 0 15px 0;
+        .custom-file {
+          overflow: hidden;
         }
-        #input_file:focus {
-          opacity: 1;
-        }
-        #preview_field {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100px;
-          height: 100px;
-        }
-        #drop_area {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100px;
-          height: 100px;
-          border: 1px dashed #aaa;
-          cursor: pointer;
-        }
-        #icon_clear_button {
-          display: none;
-          position: absolute;
-          top: -4px;
-          right: -8px;
-          width: 24px;
-          height: 24px;
-          border: 1px solid #777;
-          border-radius: 50%;
-          cursor: pointer;
+        .custom-file-label {
+          white-space: nowrap;
         }
       }
       #content-box--text {

@@ -1,94 +1,38 @@
 $(function(){
-  $('#drop_area').on('click', function(){
-    $('#input_file').click();
-  });
 
-  $('#input_file').on('change', function(){
-    // 画像が複数枚選択された場合
-    if (this.files.length > 1){
-      alert('アップロードできる画像は1つだけです');
-      $('#input_file').val('');
-      return;
+  $('.custom-file-input').on('change', handleFileSelect);
+  function handleFileSelect(evt) {
+      $('#preview').remove();// 繰り返し実行時の処理
+      $(this).parents('.input-group').after('<div id="preview"></div>');
+  
+    var files = evt.target.files;
+  
+    for (var i = 0, f; f = files[i]; i++) {
+  
+      var reader = new FileReader();
+  
+      reader.onload = (function(theFile) {
+        return function(e) {
+          if (theFile.type.match('image.*')) {
+            var $html = ['<div class="d-inline-block mr-1 mt-1"><img class="img-thumbnail" src="', e.target.result,'" title="', escape(theFile.name), '" style="height:100px;" /><div class="small text-muted text-center">', escape(theFile.name),'</div></div>'].join('');// 画像では画像のプレビューとファイル名の表示
+          } else {
+            var $html = ['<div class="d-inline-block mr-1"><span class="small">', escape(theFile.name),'</span></div>'].join('');//画像以外はファイル名のみの表示
+          }
+  
+          $('#preview').append($html);
+        };
+      })(f);
+  
+      reader.readAsDataURL(f);
     }
-    handleFiles(this.files);
-  });
-
-  // ドラッグしている要素がドロップ領域に入ったとき・領域にある間
-  $('#drop_area').on('dragenter dragover', function(event){
-    event.stopPropagation();
-    event.preventDefault();
-    $('#drop_area').css('border', '1px solid #333');
-  });
-
-    // ドラッグしている要素がドロップ領域から外れたとき
-  $('#drop_area').on('dragleave', function(event){
-    event.stopPropagation();
-    event.preventDefault();
-    $('#drop_area').css('border', '1px dashed #aaa');
-  });
-
-  // ドラッグしている要素がドロップされたとき
-  $('#drop_area').on('drop', function (event){
-    event.preventDefault();
-
-    $('#input_file')[0].files = event.originalEvent.dataTransfer.files;
-
-    if ($('#input_file')[0].files.length > 1){
-      alert('アップロードできる画像は1つだけです');
-      $('#input_file').val('');
-      return;
-    }
-    handleFiles($('#input_file')[0].files);
-  });
-
-  // 選択された画像ファイルの操作
-  function handleFiles(files){
-    var file = files[0];
-    var imageType = 'image.*';
-
-    // ファイルが画像か確認
-    if (! file.type.match(imageType)){
-      alert('画像を選択してください');
-      $('#input_file').var('');
-      $('#drop_area').css('border', '1px dashed #aaa');
-      return;
-    }
-
-    $('#drop_area').hide();
-    $('#icon_clear_button').show();
-
-    var img = document.createElement('img');
-    var reader = new FileReader();
-    reader.onload = function(){
-      img.src = reader.result;
-      $('#preview_field').append(img);
-    }
-    reader.readAsDataURL(file);
+    $(this).next('.custom-file-label').html(+ files.length + '個のファイルを選択しました');
   }
-
-  // アイコン画像を消去するボタン
-  $('#icon_clear_button').on('click', function () {
-    $('#preview_field').empty();  // 表示していた画像を消去
-    $('#input_file').val('');  // inputの中身を消去
-    $('#drop_area').show();  // drop_areaをいちばん前面に表示
-    $('#icon_clear_button').hide();  // icon_clear_buttonを非表示
-    $('#drop_area').css('border', '1px dashed #aaa');  // 枠を点線に変更
+  
+  //ファイルの取消
+  $('.reset').click(function(){
+    $(this).parent().prev().children('.custom-file-label').html('ファイル選択...');
+    $('#preview').remove();
+    $('.custom-file-input').val('');
   })
-
-  // drop_area以外でファイルがドロップされた場合、ファイルが開いてしまうのを防ぐ
-  $(document).on('dragenter', function (event) {
-    event.stopPropagation();
-    event.preventDefault();
-  });
-  $(document).on('dragover', function (event) {
-    event.stopPropagation();
-    event.preventDefault();
-  });
-  $(document).on('drop', function (event) {
-    event.stopPropagation();
-    event.preventDefault();
-  });
-
-
 
 });
