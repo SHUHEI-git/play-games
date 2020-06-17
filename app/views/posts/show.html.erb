@@ -35,7 +35,7 @@
         </div>
         <div class="show__box__content">
           <%= icon("fas", "scroll") + " 募集内容" %>
-          <p class="show__box__content__list body_height"><%= @post.body %></p>
+          <%= simple_format(@post.body, class: "show__box__content__list body_height") %>
         </div>
         <div class="show__box__content">
           <%= icon("fas", "child") + " 招待コード" %>
