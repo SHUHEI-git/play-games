@@ -43,12 +43,55 @@
         </div>
         <div class="show__box__image">
            <% if @post.image? %>
-            <p class="show__box__image__info">画像はクリックで拡大<p>
+            <p class="show__box__image__info">※画像はクリックで拡大<p>
             <%=  link_to @post.image.url, 'data-lightbox': @post.image do %>
               <%= image_tag @post.image.url %>
             <% end %>
           <% end %>
         </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="comments">
+        <%= icon("far", "comment-dots") %>
+        <span>コメント一覧</span>
+        <% if @comments %>
+          <div class="comments__area">
+            <% @comments.each do |comment| %>
+                <p class="comments__area__comment">
+                  <strong>
+                    <%= link_to user_path(comment.user_id) do %>
+                      <% if comment.user.image? %>
+                        <img src='<%= comment.user.image.url %>' class="rounded-circle user_icon" alt="ユーザーアイコン">
+                      <% else %>
+                        <img src="/assets/default.png" class="rounded-circle user_icon" alt="ユーザーアイコン">
+                      <% end %>
+                      <%= "#{comment.user.name}:" %>
+                    <% end %>
+                  </strong>
+                  <%= comment.text %>
+                </p>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="comment_box">
+        <% if current_user %>
+          <%= form_with(model: [@post, @comment], local: true) do |f| %>
+            <div class="form-group">
+              <%= f.text_area :text, placeholder: "コメントを入力", rows: "2", class: "form-control" %>
+            </div>
+            <div class="form-group text-center">
+              <%= f.submit "コメントを送信", class: "btn btn-primary" %>
+            </div>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </div>

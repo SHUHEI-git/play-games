@@ -1,6 +1,6 @@
 @mixin btn-active() {
   background: #1E90FF;
-  width: 150px;
+  width: 100%;
   box-shadow: 0 3px #191970;
   &:active {
     position: relative;

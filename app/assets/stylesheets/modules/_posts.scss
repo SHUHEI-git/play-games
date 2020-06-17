@@ -173,8 +173,8 @@
     }
   }
   .show__box {
-    & i {
-      color: #1E90FF;
+    i {
+      color: #495057;
     }
     &__content__list {
       background-color: #fff;
@@ -188,10 +188,36 @@
     &__image {
       &__info {
         margin: 0;
+        font-size: 12px;
       }
       img {
         width: 200px;
       }
+    }
+  }
+  .comments {
+    padding: 0 0 15px 0;
+    &__area {
+      height: 250px;
+      background-color: #fff;
+      border: 0.5px #b0c4de solid;
+      border-radius: 5px;
+      padding: 5px;
+      overflow: scroll;
+      & a {
+        color: #495057;
+        text-decoration: none;
+        font-weight: normal;
+        .user_icon {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+  }
+  .comment_box {
+    .btn-primary  {
+      @include btn-active();
     }
   }
 }
