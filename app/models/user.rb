@@ -6,6 +6,10 @@ class User < ApplicationRecord
 
   has_many :posts
 
+  validates :name, presence: true, uniqueness: true
+
+  mount_uploader :image, ImageUploader
+
   def remember_me
     true
   end

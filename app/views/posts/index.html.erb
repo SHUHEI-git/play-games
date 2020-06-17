@@ -13,7 +13,7 @@
               <div class="main__content__box__field__user">
                 <span>
                   <% if post.user.image? %>
-                    <img src='<%= post.user.image %>' class="rounded-circle user_icon" alt="ユーザーアイコン">
+                    <img src='<%= post.user.image.url %>' class="rounded-circle user_icon" alt="ユーザーアイコン">
                   <% else %>
                     <img src="/assets/default.png" class="rounded-circle user_icon" alt="ユーザーアイコン">
                   <% end %>

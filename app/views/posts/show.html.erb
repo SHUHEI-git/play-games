@@ -1,17 +1,26 @@
 <div class="container post_show">
   <div class="row">
     <div class="col-md-8 offset-md-2">
-      <div class="post_show__details">
-        <%= link_to "編集", "/posts/#{@post.id}/edit", method: :get, class:'post_show__details--edit' %>
-        <%= link_to "削除", "/posts/#{@post.id}", method: :delete, class:'post_show__details--delete' %>
-      </div>
+      <% if user_signed_in? && current_user.id == @post.user_id %>
+        <div class="post_show__details">
+          <%= link_to "編集", "/posts/#{@post.id}/edit", method: :get, class:'post_show__details--edit' %>
+          <%= link_to "削除", "/posts/#{@post.id}", method: :delete, class:'post_show__details--delete' %>
+        </div>
+      <% end %>
     </div>
   </div>
   <div class="row">
     <div class="col-md-8 offset-md-2 post_show__area">
-      <div class="user_icon">
-        <a>アイコン</a>
-        <a>名前</a>
+      <div class="post_show__area__user">
+        <%= link_to user_path(@post.user_id), class: "post_show__area__user__link" do %>
+          <% if @post.user.image? %>
+            <img src='<%= @post.user.image.url %>' class="rounded-circle user_icon" alt="ユーザーアイコン">
+          <% else %>
+            <img src="/assets/default.png" class="rounded-circle user_icon" alt="ユーザーアイコン">
+          <% end %>
+          <span class="user_icon_name"><%= @post.user.name %></span>
+        <% end %>
+        </a>
       </div>
       <p><%= @post.created_at.to_s(:datetime_jp) %></p>
     </div>
@@ -33,7 +42,12 @@
           <p class="show__box__content__list"><%= @post.invitation %></p>
         </div>
         <div class="show__box__image">
-          <p>画像</p>
+           <% if @post.image? %>
+            <p class="show__box__image__info">画像はクリックで拡大<p>
+            <%=  link_to @post.image.url, 'data-lightbox': @post.image do %>
+              <%= image_tag @post.image.url %>
+            <% end %>
+          <% end %>
         </div>
       </div>
     </div>
