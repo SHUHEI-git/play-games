@@ -17,7 +17,6 @@
       <% end %>
     </div>
   </div>
-
   <ul class="nav nav-tabs">
     <li class="nav-item">
       <a href="#photo1" class="nav-link active" data-toggle="tab">
@@ -34,12 +33,12 @@
       </a>
     </li>
   </ul>
-  <div class="row content show" id="photo1">
-    <%= render @posts %>
-  </div>
-  <div class="row content" id="photo2">
-    <% @user.liked_posts.each do |post| %>
-      <%= render partial: "posts/post", locals: { post: post } %>
-    <% end %>
+  <div class="tab-content">
+    <div class="tab-pane active" id="photo1">
+      <%= render "posts/post", posts: @posts %>
+    </div>
+    <div class="tab-pane" id="photo2">
+      <%= render "posts/post", posts: @user.liked_posts %>
+    </div>
   </div>
 </div>
