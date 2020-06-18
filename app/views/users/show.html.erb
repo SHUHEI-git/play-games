@@ -20,14 +20,14 @@
 
   <ul class="nav nav-tabs">
     <li class="nav-item">
-      <a href="#post" class="nav-link active">
+      <a href="#" class="nav-link active" id="posts">
         <div class="user-status">
           <span class="user-status__name">投稿</span>
         </div>
       </a>
     </li>
     <li class="nav-item">
-      <a href="#" class="nav-link">
+      <a href="#" class="nav-link" id="likes">
         <div class="user-status">
           <span class="user-status__name">いいね</span>
         </div>
@@ -35,21 +35,7 @@
     </li>
   </ul>
 
-  <div class="row tab-content user_conts">
-    <% @posts.each do |post| %>
-      <div class="col-sm-12 col-md-6 col-lg-4 user_conts__box tab-pane active" id="post">
-        <%= link_to "/posts/#{post.id}",class: "user_conts__box__link", method: :get do %>
-          <div class="rounded user_conts__box__link__field">
-            <div class="user_conts__box__link__field--title">
-              <p><%= post.title %></p>
-            </div>
-            <%= simple_format(post.body, class: "user_conts__box__field--content") %>
-            <div class="user_conts__box__link__field--comment">
-              <%= icon("far", "comment-dots") + "コメント○件"%>
-            </div>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
+  <div class="row tab-content content show">
+    <%= render @posts %>
   </div>
 </div>
