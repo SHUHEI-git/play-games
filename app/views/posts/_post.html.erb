@@ -16,8 +16,13 @@
         <p><%= post.title %></p>
       </div>
       <%= simple_format(post.body, class: "main__content__box__field--content") %>
-      <div class="main__content__box__field--comment">
-        <%= icon("far", "comment-dots") + "コメント○件"%>
+      <div class="main__content__box__field--number">
+        <div class="number__comment">
+          <%= icon("far", "comment-dots") + "コメント○件"%>
+        </div>
+        <div class="like_link" id="like_<% post.id %>">
+          aaaa
+        </div>
       </div>
     </div>
   <% end %>
