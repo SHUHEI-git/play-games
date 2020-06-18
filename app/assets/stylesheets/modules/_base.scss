@@ -58,16 +58,20 @@ body {
 
   }
 
-  .form {
+  .input-group {
+    width: 350px;
+    padding: 8px 0;
     margin-left: auto;
     margin-right: 10px;
-    line-height: 56px;
-    &__search {
-      &--text {
-        height: 25px;
-        border: 1px black solid;
-        
-      }
+    .form-control {
+      border-top-left-radius: 0.25rem;
+      border-bottom-left-radius: 0.25rem;
+    }
+    .btn-default {
+      background-color: #6495ED;
+      color: #fff;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
     }
   }
 }
