@@ -4,11 +4,16 @@ class Post < ApplicationRecord
 
   belongs_to :user
   has_many :comments
+  has_many :likes, dependent: :destroy
 
   mount_uploader :image, ImageUploader
 
   def self.search(search)
     return Post.all unless search
     Post.where('title LIKE(?) OR body LIKE(?)', "%#{search}%", "%#{search}%")
-    end
+  end
+
+  def like_user(user_id)
+    likes.find_by(user_id: user_id)
+  end
 end

@@ -5,9 +5,7 @@
         <%= icon("far", "clone") + "新着募集" %>
       </h2>
     </div>
-    <div class="row">
-      <%= render @posts %>
-    </div>
+    <%= render "post", posts: @posts %>
     <div class="row">
       <div class="col-md-6 offset-md-3">
         <%= paginate(@posts) %>

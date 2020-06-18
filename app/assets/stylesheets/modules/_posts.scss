@@ -55,10 +55,19 @@
             padding: 5px;
           }
         }
-        &--comment {
+        &--number {
           position: absolute;
           bottom: 0;
-          color: #A9A9A9;
+          width: calc(100% - 5px);
+          padding: 0 0 5px 0;
+          display: flex;
+          justify-content: space-between;
+          .number__comment {
+            color: #A9A9A9;
+          }
+          .like_link {
+            padding: 0 10px 0 0;
+          }
         }
       }
     }
