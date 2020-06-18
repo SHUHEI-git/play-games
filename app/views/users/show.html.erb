@@ -20,14 +20,14 @@
 
   <ul class="nav nav-tabs">
     <li class="nav-item">
-      <a href="#" class="nav-link active" id="posts">
+      <a class="nav-link active" id="posts">
         <div class="user-status">
           <span class="user-status__name">投稿</span>
         </div>
       </a>
     </li>
     <li class="nav-item">
-      <a href="#" class="nav-link" id="likes">
+      <a class="nav-link" id="likes">
         <div class="user-status">
           <span class="user-status__name">いいね</span>
         </div>
@@ -35,7 +35,12 @@
     </li>
   </ul>
 
-  <div class="row tab-content content show">
+  <div class="row content show">
     <%= render @posts %>
+  </div>
+  <div class="row content">
+    <% @user.liked_posts.each do |post| %>
+      <%= render partial: "posts/post", locals: { post: post } %>
+    <% end %>
   </div>
 </div>
