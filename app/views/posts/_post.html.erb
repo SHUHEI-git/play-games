@@ -20,8 +20,8 @@
         <div class="number__comment">
           <%= icon("far", "comment-dots") + "コメント○件"%>
         </div>
-        <div class="like_link" id="like_<% post.id %>">
-          aaaa
+        <div class="like_link" id="like_<%= post.id %>">
+          <%= render 'likes/like', post: post %>
         </div>
       </div>
     </div>
