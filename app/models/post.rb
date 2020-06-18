@@ -6,4 +6,9 @@ class Post < ApplicationRecord
   has_many :comments
 
   mount_uploader :image, ImageUploader
+
+  def self.search(search)
+    return Post.all unless search
+    Post.where('title LIKE(?) OR body LIKE(?)', "%#{search}%", "%#{search}%")
+    end
 end

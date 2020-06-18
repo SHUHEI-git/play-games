@@ -1,0 +1,26 @@
+<div class="col-sm-12 col-md-6 col-lg-4 main__content__box">
+  <%= link_to "/posts/#{post.id}",class: "main__content__box__link", method: :get do %>
+    <div class="rounded main__content__box__field">
+      <div class="main__content__box__field__user">
+        <span>
+          <% if post.user.image? %>
+            <img src='<%= post.user.image.url %>' class="rounded-circle user_icon" alt="ユーザーアイコン">
+          <% else %>
+            <img src="/assets/default.png" class="rounded-circle user_icon" alt="ユーザーアイコン">
+          <% end %>
+        </span>
+        <p class="main__content__box__field__user--name"><%= post.user.name %></p>
+        <p class="main__content__box__field__user--date"><%= post.created_at.to_s(:datetime_jp) %></p>
+      </div>
+      <div class="main__content__box__field--title">
+        <p><%= post.title %></p>
+      </div>
+      <%= simple_format(post.body, class: "main__content__box__field--content") %>
+      <div class="main__content__box__field--comment">
+        <%= icon("far", "comment-dots") + "コメント○件"%>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
