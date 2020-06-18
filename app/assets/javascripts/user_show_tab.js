@@ -1,7 +1,6 @@
 $(function()  {
   // タブのDOM要素を取得し、変数で定義
   let tabs = $(".nav-link");
-  tabsAry = Array.prototype.slice.call(tabs);
 
   // クラスの切り替えをtabSwitch関数で定義
   function tabSwitch() {
@@ -10,9 +9,6 @@ $(function()  {
 
     // クリックしたタブにactiveクラスを追加
     $(this).addClass("active");
-
-    // コンテンツの全てのshowクラスのうち、最初の要素を削除
-    $(".show").removeClass("show");
 
     // 何番目の要素がクリックされたかを、配列tabsから要素番号を取得
     const index = tabs.index(this);

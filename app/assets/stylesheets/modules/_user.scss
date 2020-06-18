@@ -106,15 +106,12 @@
     .nav-link {
       color: #495057;
     }
-    // .nav-link.active {
-    //   background-color: #fff;
-    //   border-color: #dee2e6 #dee2e6 #fff;
-    // }
   }
   .content {
     display: none;
   }
   .content.show {
     display: block;
+    display: flex;
   }
 }
