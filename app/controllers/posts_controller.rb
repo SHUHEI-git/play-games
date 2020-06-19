@@ -12,7 +12,11 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(post_params)
+    @post = Post.new(post_params)
+    tag_list = params[:post][:tag_name].split(",")
+    if @post.save
+      @post.save_posts(tag_list)
+    end
   end
 
   def show
