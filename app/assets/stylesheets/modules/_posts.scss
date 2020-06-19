@@ -54,6 +54,8 @@
         .post_link {
           &--title {
             text-align: center;
+            white-space: nowrap;
+            text-overflow: ellipsis;
             p {
               margin: auto;
               padding: 5px;
@@ -204,6 +206,7 @@
     }
     .body_height {
       height: 250px;
+      overflow: auto;
     }
     &__image {
       &__info {
@@ -230,7 +233,7 @@
       border: 0.5px #b0c4de solid;
       border-radius: 5px;
       padding: 5px;
-      overflow: scroll;
+      overflow: auto;
       & a {
         color: #495057;
         text-decoration: none;
