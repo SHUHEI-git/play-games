@@ -30,7 +30,7 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @tag_list = @post.tags.pluck(:tag_name).jpin(",")
+    @tag_list = @post.tags.pluck(:tag_name).join(",")
   end
 
   def update
@@ -59,9 +59,10 @@ class PostsController < ApplicationController
   end
 
   def correct_user
-    @correct_user = user_signed_in? && current_user.id == @post.user_id
-      unless @correct_user
-        redirect_to root_path
-      end
+    @post = Post.find_by(id: params[:id])
+    if @post.user_id != @current_user.id
+      flash[:notice] = "権限がありません"
+      redirect_to root_path
+    end
   end
 end
