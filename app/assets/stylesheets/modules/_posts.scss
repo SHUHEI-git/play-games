@@ -36,23 +36,36 @@
           border-bottom: 0.5px #b0c4de solid;
           height: 35px;
           line-height: 35px;
-          & span {
-            .user_icon {
-              width: 30px;
-              height: 30px;
+          .user_area {
+            display: flex;
+            & span {
+              .user_icon {
+                width: 30px;
+                height: 30px;
+              }
+            }
+            &--name {
+              font-size: 15px;
+              margin-right: auto;
+              padding: 0 0 0 5px;
             }
           }
-          &--name {
-            font-size: 15px;
-            margin-right: auto;
-            padding: 0 0 0 5px;
-          }
         }
-        &--title {
-          text-align: center;
-          p {
-            margin: auto;
-            padding: 5px;
+        .post_link {
+          &--title {
+            text-align: center;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            p {
+              margin: auto;
+              padding: 5px;
+            }
+          }
+          &--content {
+            height: 120px;
+            margin: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
           }
         }
         &--number {
@@ -193,6 +206,7 @@
     }
     .body_height {
       height: 250px;
+      overflow: auto;
     }
     &__image {
       &__info {
@@ -206,13 +220,20 @@
   }
   .comments {
     padding: 0 0 15px 0;
+    &__title {
+      text-align: center;
+      margin: 20px 0 0 0;
+      font-size: 20px;
+      border-top: 0.5px #c0c0c0 solid;
+      padding: 10px 0 0 0;
+    }
     &__area {
       height: 250px;
       background-color: #fff;
       border: 0.5px #b0c4de solid;
       border-radius: 5px;
       padding: 5px;
-      overflow: scroll;
+      overflow: auto;
       & a {
         color: #495057;
         text-decoration: none;

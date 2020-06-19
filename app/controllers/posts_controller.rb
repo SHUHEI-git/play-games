@@ -12,7 +12,11 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(post_params)
+    @post = Post.new(post_params)
+    tag_list = params[:post][:tag_name].split(",")
+    if @post.save
+      @post.save_posts(tag_list)
+    end
   end
 
   def show
@@ -26,11 +30,15 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @tag_list = @post.tags.pluck(:tag_name).join(",")
   end
 
   def update
+    tag_list = params[:post][:tag_name].split(",")
     post = Post.find(params[:id])
-    post.update(post_params)
+    if post.update(post_params)
+      @post.save_posts(tag_list)
+    end
   end
 
   def search
@@ -51,9 +59,10 @@ class PostsController < ApplicationController
   end
 
   def correct_user
-    @correct_user = user_signed_in? && current_user.id == @post.user_id
-      unless @correct_user
-        redirect_to root_path
-      end
+    @post = Post.find_by(id: params[:id])
+    if @post.user_id != @current_user.id
+      flash[:notice] = "権限がありません"
+      redirect_to root_path
+    end
   end
 end
