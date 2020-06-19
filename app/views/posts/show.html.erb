@@ -30,16 +30,27 @@
     <div class="col-md-8 offset-md-2">
       <div class="show__box">
         <div class="show__box__content">
-          <%= icon("fas", "gamepad") + " タイトル" %> 
+          <%= icon("fas", "gamepad")%>
+          <span>タイトル</span>
           <p class="show__box__content__list"><%= @post.title %></p>
         </div>
         <div class="show__box__content">
-          <%= icon("fas", "scroll") + " 募集内容" %>
+          <%= icon("fas", "scroll") %>
+          <span>募集内容</span>
           <%= simple_format(@post.body, class: "show__box__content__list body_height") %>
         </div>
         <div class="show__box__content">
-          <%= icon("fas", "child") + " 招待コード" %>
+          <%= icon("fas", "child") %>
+          <span>招待コード</span>
           <p class="show__box__content__list"><%= @post.invitation %></p>
+        </div>
+        <div class="show__box__content">
+          <span>タグ</span>
+          <% @post.tags.each do |tag| %>
+            <span class="badge badge-primary">
+              <%= tag.tag_name %>
+            </span>
+          <% end %>
         </div>
         <div class="show__box__image">
            <% if @post.image? %>
@@ -55,8 +66,10 @@
   <div class="row">
     <div class="col-md-8 offset-md-2">
       <div class="comments">
-        <%= icon("far", "comment-dots") %>
-        <span>コメント一覧</span>
+        <div class="comments__title">
+          <%= icon("far", "comment-dots") %>
+          <span>コメント一覧</span>
+        </div>
         <% if @comments %>
           <div class="comments__area">
             <% @comments.each do |comment| %>

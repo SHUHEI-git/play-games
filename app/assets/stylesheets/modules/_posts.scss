@@ -62,6 +62,8 @@
           &--content {
             height: 120px;
             margin: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
           }
         }
         &--number {
@@ -215,6 +217,13 @@
   }
   .comments {
     padding: 0 0 15px 0;
+    &__title {
+      text-align: center;
+      margin: 20px 0 0 0;
+      font-size: 20px;
+      border-top: 0.5px #c0c0c0 solid;
+      padding: 10px 0 0 0;
+    }
     &__area {
       height: 250px;
       background-color: #fff;
