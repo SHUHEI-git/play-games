@@ -30,11 +30,15 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @tag_list = @post.tags.pluck(:tag_name).jpin(",")
   end
 
   def update
+    tag_list = params[:post][:tag_name].split(",")
     post = Post.find(params[:id])
-    post.update(post_params)
+    if post.update(post_params)
+      @post.save_posts(tag_list)
+    end
   end
 
   def search
