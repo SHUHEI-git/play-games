@@ -3,10 +3,9 @@
     <div class="col-md-8 offset-md-2">
       <% if user_signed_in? && current_user.id == @post.user_id %>
         <div class="post_show__list">
-          <span class="post_show__list__item">
-            <%= link_to "編集", "/posts/#{@post.id}/edit", method: :get %>
-          </span>
-          <button class="post_show__list__item" id="modal-open-btn">削除
+          <%# <span class="post_show__list__item"> %>
+          <%= link_to "編集",  edit_post_path(@post), method: :get, class: "btn btn-primary post_show__list__item" %>
+          <button class="btn btn-primary post_show__list__item" id="modal-open-btn">削除
           </button>
         </div>
       <% end %>
@@ -23,7 +22,7 @@
         <button type="button" class="btn btn-secondary" id="modal-close-btn">キャンセル</button>
         <button type="button" class="btn btn-primary" id="delete-comformation-btn">
           削除
-          <%= link_to "", "/posts/#{@post.id}", method: :delete, id: "item-delete" %>
+          <%= link_to "", post_path(@post), method: :delete, id: "item-delete" %>
         </button>
       </div>
     </div>

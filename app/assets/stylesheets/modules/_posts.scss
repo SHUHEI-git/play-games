@@ -162,16 +162,9 @@
     justify-content: flex-end;
     &__item {
       margin: 5px;
-      width: 60px;
-      height: 30px;
       text-align: center;
-      line-height: 30px;
-      border-radius: 5px;
-      background-color: #6495ED;
-      & a {
-        text-decoration : none;
-        color: #fff;
-      }
+      text-decoration : none;
+      color: #fff;
     }
   }
   &__area {
