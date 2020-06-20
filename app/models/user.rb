@@ -13,6 +13,12 @@ class User < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com', name: 'ゲスト', friend_code: '1234-5678-9012') do |user|
+      user.password = SecureRandom.urlsafe_base64
+    end
+  end
+
   def remember_me
     true
   end

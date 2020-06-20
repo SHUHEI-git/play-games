@@ -44,7 +44,8 @@
           <span>招待コード</span>
           <p class="show__box__content__list"><%= @post.invitation %></p>
         </div>
-        <div class="show__box__content">
+        <div class="show__box__content show__box--tag">
+          <%= icon("fas", "tag") %>
           <span>タグ</span>
           <% @post.tags.each do |tag| %>
             <span class="badge badge-primary">
