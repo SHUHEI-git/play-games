@@ -37,6 +37,12 @@
           <% end %>
         </li>
         <li class="header__box__list__each">
+          <%= link_to users_guest_sign_in_path, method: :post, class: "icon-link" do %>
+            <%= icon("fas", "directions") %>
+            <%= "ゲストログイン" %>
+          <% end %>
+        </li>
+        <li class="header__box__list__each">
           <%= link_to new_user_registration_path, class: "icon-link" do %>
             <%= icon("fas", "user-plus") %>
             <%= " 新規登録" %>
