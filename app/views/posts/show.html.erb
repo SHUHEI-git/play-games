@@ -3,36 +3,31 @@
     <div class="col-md-8 offset-md-2">
       <% if user_signed_in? && current_user.id == @post.user_id %>
         <div class="post_show__list">
-          <span>
-            <%= link_to "編集", "/posts/#{@post.id}/edit", method: :get, class:'post_show__list__item' %>
+          <span class="post_show__list__item">
+            <%= link_to "編集", "/posts/#{@post.id}/edit", method: :get %>
           </span>
-          <span data-toggle="modal" data-target="#exampleModal">
-            <%= link_to "削除", "/posts/#{@post.id}", method: :delete, class:'post_show__list__item' %>
-          </span>
+          <button class="post_show__list__item" id="modal-open-btn">削除
+          </button>
         </div>
       <% end %>
     </div>
   </div>
   <!-- モーダルの設定 -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">モーダルのタイトル</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <p>モーダルのコンテンツ文。</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
-          <button type="button" class="btn btn-primary">変更を保存</button>
-        </div><!-- /.modal-footer -->
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div><!-- /.modal -->
+  <div class="overlay">
+    <div class="modal-window">
+      <div class="modal-message-box">
+        <h5>削除確認画面</h5>
+        <p>投稿を削除しますか？</p>
+      </div>
+      <div class="modal-window--btn">
+        <button type="button" class="btn btn-secondary" id="modal-close-btn">キャンセル</button>
+        <button type="button" class="btn btn-primary" id="delete-comformation-btn">
+          削除
+          <%= link_to "", "/posts/#{@post.id}", method: :delete, id: "item-delete" %>
+        </button>
+      </div>
+    </div>
+  </div>
   <div class="row">
     <div class="col-md-8 offset-md-2 post_show__area">
       <div class="post_show__area__user">
