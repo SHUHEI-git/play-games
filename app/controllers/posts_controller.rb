@@ -16,6 +16,10 @@ class PostsController < ApplicationController
     tag_list = params[:post][:tag_name].split(",")
     if @post.save
       @post.save_posts(tag_list)
+      flash[:notice] = "投稿しました"
+      redirect_to root_path
+    else
+      redirect_to new_post_path
     end
   end
 
@@ -26,7 +30,12 @@ class PostsController < ApplicationController
 
   def destroy
     post = Post.find(params[:id])
-    post.destroy
+    if post.destroy
+      flash[:notice] = "投稿を削除しました"
+      redirect_to root_path
+    else
+      redirect_to post_path(post.id)
+    end
   end
 
   def edit
@@ -38,6 +47,8 @@ class PostsController < ApplicationController
     post = Post.find(params[:id])
     if post.update(post_params)
       @post.save_posts(tag_list)
+      flash[:notice] = "投稿を編集しました"
+      redirect_to post_path(post.id)
     end
   end
 

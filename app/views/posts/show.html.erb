@@ -2,11 +2,28 @@
   <div class="row">
     <div class="col-md-8 offset-md-2">
       <% if user_signed_in? && current_user.id == @post.user_id %>
-        <div class="post_show__details">
-          <%= link_to "編集", "/posts/#{@post.id}/edit", method: :get, class:'post_show__details--edit' %>
-          <%= link_to "削除", "/posts/#{@post.id}", method: :delete, class:'post_show__details--delete' %>
+        <div class="post_show__list">
+          <%= link_to "編集",  edit_post_path(@post), method: :get, class: "btn btn-primary post_show__list__item" %>
+          <button class="btn btn-primary post_show__list__item" id="modal-open-btn">削除
+          </button>
         </div>
       <% end %>
+    </div>
+  </div>
+  <!-- モーダルの設定 -->
+  <div class="overlay">
+    <div class="modal-window">
+      <div class="modal-message-box">
+        <h5>削除確認画面</h5>
+        <p>投稿を削除しますか？</p>
+      </div>
+      <div class="modal-window--btn">
+        <button type="button" class="btn btn-secondary" id="modal-close-btn">キャンセル</button>
+        <button type="button" class="btn btn-primary" id="delete-comformation-btn">
+          削除
+          <%= link_to "", post_path(@post), method: :delete, id: "item-delete" %>
+        </button>
+      </div>
     </div>
   </div>
   <div class="row">

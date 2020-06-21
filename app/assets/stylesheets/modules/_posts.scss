@@ -157,19 +157,14 @@
 // 投稿詳細画面
 .post_show {
   flex: 1;
-  &__details{
+  &__list{
     display: flex;
     justify-content: flex-end;
-    & a {
+    &__item {
       margin: 5px;
-      width: 60px;
-      height: 30px;
       text-align: center;
-      line-height: 30px;
-      border-radius: 5px;
-      background-color: #6495ED;
+      text-decoration : none;
       color: #fff;
-      text-decoration : none
     }
   }
   &__area {
@@ -254,3 +249,53 @@
     }
   }
 }
+
+// モーダル
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 1;
+    .modal-window {
+      width: 500px;
+      height: 200px;
+      position: absolute;
+      border-radius: 5px;
+    //トップからの場所を指定（topをいじれば高さが調整できます）
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      z-index: 2;
+    //flexboxで子要素のボタンとメッセージボックスの要素を配置する
+      display: flex;
+      flex-wrap: wrap;
+      .modal-message-box {
+        width: 100%;
+        border-bottom: 0.5px #c0c0c0 solid;
+    //下記heightの60pxはボタンの高さで、それを画面の大きさから引いています。
+        height: calc(100% - 60px);
+        text-align: center;
+    //flexboxで文字の配置を決める（縦方向、中央揃え）
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        h5 {
+          padding: 20px 0;
+        }
+        p {
+          font-size: 18px;
+        }
+      }
+      &--btn {
+        margin-left: auto;
+        button {
+          margin: 0 10px 0 0;
+        }
+      }
+    }
+  }

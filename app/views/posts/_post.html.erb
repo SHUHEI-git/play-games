@@ -28,7 +28,7 @@
         <% end %>
         <div class="main__content__box__field--number">
           <div class="number__comment">
-            <%= icon("far", "comment-dots") + "コメント○件"%>
+            <%= icon("far", "comment-dots") + "コメント#{post.comments.count}件"%>
           </div>
           <div class="like_link" id="like_<%= post.id %>">
             <%= render 'likes/like', post: post %>
