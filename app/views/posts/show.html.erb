@@ -3,7 +3,6 @@
     <div class="col-md-8 offset-md-2">
       <% if user_signed_in? && current_user.id == @post.user_id %>
         <div class="post_show__list">
-          <%# <span class="post_show__list__item"> %>
           <%= link_to "編集",  edit_post_path(@post), method: :get, class: "btn btn-primary post_show__list__item" %>
           <button class="btn btn-primary post_show__list__item" id="modal-open-btn">削除
           </button>
