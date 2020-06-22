@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :likes
   has_many :liked_posts, through: :likes, source: :post
 
-  validates :name, presence: true, length: { maximum: 8 }
+  validates :name, presence: true, uniqueness: true, length: { maximum: 8 }
 
   mount_uploader :image, ImageUploader
 
@@ -23,5 +23,3 @@ class User < ApplicationRecord
     true
   end
 end
-
-# uniqueness: true,
