@@ -13,7 +13,7 @@
 
 FactoryBot.define do
   factory :user do
-    name                  {"abe"}
+    name                  {Faker::Name.last_name}
     password              {"00000000"}
     password_confirmation {"00000000"}
     friend_code           {"123456789"}
