@@ -3,14 +3,14 @@
   flex: 1;
   &__title {
     height: 50px;
-    color: #495057;
+    color: $title-color;
     margin: 15px auto 0;
   }
   .user_form {
     margin-bottom: 20px;
     &__inner {
       padding: 10px;
-      background-color: #fff;
+      background-color: $form_background-color;
       &__box {
         &--input {
           border: 1px #ccc solid;
@@ -19,12 +19,7 @@
           padding: 0 5px;
         }
         span {
-          background: #ea352d;
-          margin: 0 0 0 8px;
-          padding: 2px 4px;
-          border-radius: 2px;
-          color: #fff;
-          font-size: 12px;
+          @include guide-required();
         }
         .form-optional {
           background: #bfbfbfbb;
@@ -48,14 +43,14 @@
   flex: 1;
   &__title {
     height: 50px;
-    color: #495057;
+    color: $title-color;
     margin: 15px auto 0;
   }
   .user_form {
     margin-bottom: 20px;
     &__inner {
       padding: 10px;
-      background-color: #fff;
+      background-color: $form_background-color;
       &__box {
         &--input {
           border: 1px #ccc solid;
@@ -97,7 +92,7 @@
           line-height: 30px;
           border-radius: 5px;
           background-color: #6495ED;
-          color: #fff;
+          color: $font-color;
         }
       }
     }
@@ -105,7 +100,7 @@
 
   .nav-tabs {
     .nav-link {
-      color: #495057;
+      color: $title-color;
     }
   }
 }

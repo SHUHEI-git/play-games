@@ -11,7 +11,7 @@
     &__title {
       margin: 15px;
       text-align: center;
-      color: #495057;
+      color: $title-color;
       .fa-clone {
         margin-right: 5px;
       }
@@ -20,13 +20,13 @@
       padding: 15px;
       & a {
         text-decoration: none;
-        color: #495057;
+        color: $title-color;
       }
       &__field {
         height: 250px;
         padding: 0 5px;
         border: 1px #000 solid;
-        background-color: #fff;
+        background-color: $form_background-color;
         box-shadow: 10px 10px 15px -10px;
         position: relative;
         &__user {
@@ -92,7 +92,7 @@
   flex: 1;
   .form__title {
     height: 50px;
-    color: #495057;
+    color: $title-color;
     text-align: center;
     margin-top: 15px;
   }
@@ -101,15 +101,10 @@
     &__box {
       padding: 10px;
       border: 1px #000 solid;
-      background-color: #fff;
+      background-color: $form_background-color;
       box-shadow: 10px 10px 15px -10px;
       span {
-        background: #ea352d;
-        margin: 0 0 0 8px;
-        padding: 2px 4px;
-        border-radius: 2px;
-        color: #fff;
-        font-size: 12px;
+        @include guide-required();
       }
       .form-optional {
         background: #bfbfbfbb;
@@ -143,7 +138,7 @@
       margin: 5px;
       text-align: center;
       text-decoration : none;
-      color: #fff;
+      color: $font-color;
     }
   }
   &__area {
@@ -153,7 +148,7 @@
     &__user {
       padding: 0 0 10px 0;
       & a {
-        color: #495057;
+        color: $title-color;
         text-decoration: none;
         .user_icon {
           width: 70px;
@@ -170,10 +165,10 @@
   }
   .show__box {
     i {
-      color: #495057;
+      color: $title-color;
     }
     &__content__list {
-      background-color: #fff;
+      background-color: $form_background-color;
       border: 0.5px #b0c4de solid;
       border-radius: 5px;
       padding: 5px;
@@ -206,13 +201,13 @@
     }
     &__area {
       height: 250px;
-      background-color: #fff;
+      background-color: $form_background-color;
       border: 0.5px #b0c4de solid;
       border-radius: 5px;
       padding: 5px;
       overflow: auto;
       & a {
-        color: #495057;
+        color: $title-color;
         text-decoration: none;
         font-weight: normal;
         .user_icon {
@@ -248,7 +243,7 @@
       top: 20%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background-color: #fff;
+      background-color: $form_background-color;
       z-index: 2;
     //flexboxで子要素のボタンとメッセージボックスの要素を配置する
       display: flex;
