@@ -33,7 +33,7 @@
           display: flex;
           justify-content: space-between;
           font-size: 8px;
-          border-bottom: 0.5px #b0c4de solid;
+          border-bottom: $flame_border;
           height: 35px;
           line-height: 35px;
           .user_area {
@@ -169,7 +169,7 @@
     }
     &__content__list {
       background-color: $form_background-color;
-      border: 0.5px #b0c4de solid;
+      border: $flame_border;
       border-radius: 5px;
       padding: 5px;
     }
@@ -202,7 +202,7 @@
     &__area {
       height: 250px;
       background-color: $form_background-color;
-      border: 0.5px #b0c4de solid;
+      border: $flame_border;
       border-radius: 5px;
       padding: 5px;
       overflow: auto;
