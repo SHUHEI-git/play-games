@@ -133,27 +133,6 @@
   }
 }
 
-// お知らせ画面
-.confirmation_page {
-  flex: 1;
-  &__box {
-    padding: 10px;
-    border: 1px #000 solid;
-    background-color: #fff;
-    box-shadow: 10px 10px 15px -10px;
-    margin: 15px;
-    &__title {
-      height: 70px;
-      text-align: center;
-      margin-top: 50px;
-    }
-    &__btn {
-      background-color: #6495ED;
-      color: #fff;
-    }
-  }
-}
-
 // 投稿詳細画面
 .post_show {
   flex: 1;
@@ -277,10 +256,8 @@
       .modal-message-box {
         width: 100%;
         border-bottom: 0.5px #c0c0c0 solid;
-    //下記heightの60pxはボタンの高さで、それを画面の大きさから引いています。
         height: calc(100% - 60px);
         text-align: center;
-    //flexboxで文字の配置を決める（縦方向、中央揃え）
         display: flex;
         flex-direction: column;
         justify-content: space-around;
