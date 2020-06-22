@@ -103,7 +103,7 @@
       border: 1px #000 solid;
       background-color: $form_background-color;
       box-shadow: 10px 10px 15px -10px;
-      span {
+      .form-guide {
         @include guide-required();
       }
       .form-optional {
@@ -116,6 +116,15 @@
         }
         .custom-file-label {
           white-space: nowrap;
+        }
+      }
+      &--preview {
+        &__info {
+          margin: 0;
+          font-size: 12px;
+        }
+        img {
+          width: 200px;
         }
       }
       #content-box--text {

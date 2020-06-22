@@ -4,28 +4,45 @@
         <%= form_with model: @post, local: true do |f| %>
           <div class="form-group new__form__box__title">
             <%= f.label :game_title, "ゲームタイトル", class: "new__form__title-box--title" %>
-            <span class="form-require">必須</span><br />
+            <span class="form-guide">必須</span><br />
             <%= f.text_field :title, class: "form-control" %>
           </div>
           <div class="form-group new__form__box__content">
             <%= f.label :content, "募集内容", class: "new__form__content-box--content" %>
-            <span class="form-require">必須</span><br />
+            <span class="form-guide">必須</span><br />
             <%= f.text_area :body, class: "form-control", id: "content-box--text" %>
           </div>
           <div class="form-group new__form__box__code">
             <%= f.label :code, "招待コード", class: "new__form__code-box--code" %>
-            <span class="form-optional">任意</span><br />
+            <span class="form-guide form-optional">任意</span><br />
             <%= f.text_field :invitation, class: "form-control", placeholder: "フレンドコードなど" %>
           </div>
           <div class="form-group new__form__box__tag">
             <%= f.label :tag, "タグ(記入時は , で区切る)" %>
-            <span class="form-optional">任意</span><br />
+            <span class="form-guide form-optional">任意</span><br />
             <%= f.text_field :tag_name, value: @tag_list, class: "form-control", placeholder: "例:PS4,FPS,初心者" %>
           </div>
           <div class="form-group new__form__box__image">
             <%= f.label :inputfile, "画像を選択", class: "label-name"%>
-              <span class="form-optional">任意</span><br />
+              <span class="form-guide form-optional">任意</span><br />
             <%= f.file_field :image %>
+            <%= f.hidden_field :image_cache %>
+          </div>
+          <div class="new__form__box--preview">
+            <% if @post.image? %>
+              <p class="new__form__box--preview__info">投稿している画像<p>
+              <%=  link_to @post.image.url, 'data-lightbox': @post.image do %>
+                <%= image_tag @post.image.url %>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="form-group">
+            <% if @post.persisted? && @post.image? %>
+              <label class="label-name">
+                <%= f.check_box :remove_image %>
+                投稿画像を削除
+              </label>
+            <% end %>
           </div>
           <div class="form-group text-center">
             <%= f.submit "投稿", class: "btn btn-primary" %>
