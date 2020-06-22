@@ -41,7 +41,10 @@ RSpec.configure do |config|
 
   # ---下記追加---
   config.include FactoryBot::Syntax::Methods
-  config.include Devise::Test::IntegrationHelpers, type: :request
+
+  Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include ControllerMacros, type: :controller
   config.include FactoryBot::Syntax::Methods
   # You can uncomment this line to turn off ActiveRecord support entirely.
   # config.use_active_record = false
