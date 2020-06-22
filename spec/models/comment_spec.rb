@@ -1,5 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe '#create' do
+    context '保存できる場合' do
+      it 'textが存在すれば保存できること' do
+        
+      end
+    end
+  end
 end
