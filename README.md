@@ -1,24 +1,52 @@
-# README
+# PLAY GAMES
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ゲーム専用のメンバー募集アプリです。
+ゲーム内容を投稿して、一緒にプレイする人を募集します。
+レスポンシブ対応しているのでスマホからもご確認いただけます。
 
-Things you may want to cover:
+## URL
 
-* Ruby version
+## 言語・使用技術
+* フロント
+・HTML
+・Scss
+・jQuery
+・bootstrap4
 
-* System dependencies
+* バックエンド
+・Ruby 2.5.3
+・Ruby on Rails 5.2.4
 
-* Configuration
+* サーバー
+・Nginx
 
-* Database creation
+* DB
+・MySQL 5.7
 
-* Database initialization
+* インフラ・開発環境等
+・Docker/docker-compose
+・AWS
+・Capistrano3
+・RSpec
 
-* How to run the test suite
+## 実装機能
+* ユーザー機能
+  * deviseを使用
+  * 新規登録・ログイン・ログアウト機能
+  * マイページ・登録情報編集機能
+* 記事投稿機能
+  * 記事一覧表示、記事詳細表示、記事投稿、記事編集、記事削除機能
+* 画像投稿機能
+  * 画像のアップロードはcarrierwaveを使用
+* コメント機能
+  * コメント表示、コメント投稿
+* いいね機能
+  * 非同期通信を使用
+* タグ機能
+* ページネーション機能
+  * kaminariを使用
+* 検索機能
+  * あいまい検索
+* かんたんログイン機能
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 制作背景

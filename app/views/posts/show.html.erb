@@ -71,7 +71,7 @@
           <% end %>
         </div>
         <div class="show__box__image">
-           <% if @post.image? %>
+          <% if @post.image? %>
             <p class="show__box__image__info">※画像はクリックで拡大<p>
             <%=  link_to @post.image.url, 'data-lightbox': @post.image do %>
               <%= image_tag @post.image.url %>

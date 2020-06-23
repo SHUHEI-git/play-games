@@ -5,10 +5,9 @@ body {
   background-color: #f7f7f7;
 }
 
-// header
 .header__box {
-  background-color: #fff;
-  border-bottom: 1px solid #D3D3D3;
+  background-color: $form_background-color;
+  border-bottom: 0.5px solid #D3D3D3;
   &__logo--image {
     width: 150px;
   }
@@ -26,14 +25,14 @@ body {
     }
     .btn-default {
       background-color: #6495ED;
-      color: #fff;
+      color: $font-color;
     }
   }
 }
 
 .footer {
   height: 56px;
-  background-color: white;
+  background-color: $form_background-color;
   border-top: 0.5px solid #D3D3D3;
   &__item {
     line-height: 56px;
