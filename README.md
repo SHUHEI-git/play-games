@@ -1,33 +1,36 @@
 # PLAY GAMES
 
-ゲーム専用のメンバー募集アプリです。
-ゲーム内容を投稿して、一緒にプレイする人を募集します。
+ゲーム専用のメンバー募集アプリです。  
+ゲーム内容を投稿して、一緒にプレイする人を募集します。  
 レスポンシブ対応しているのでスマホからもご確認いただけます。
+
+## 制作背景
+ゲームが好きで募集アプリを利用していた際、「ここを変えればもっと使いやすな」と思っていたこと。また、募集専用アプリが少ないと感じ、制作しました。
 
 ## URL
 
 ## 言語・使用技術
 * フロント
-・HTML
-・Scss
-・jQuery
-・bootstrap4
+  * HTML
+  * Scss
+  * jQuery
+  * bootstrap4
 
 * バックエンド
-・Ruby 2.5.3
-・Ruby on Rails 5.2.4
+  * Ruby 2.5.3
+  * Ruby on Rails 5.2.4
 
 * サーバー
-・Nginx
+  * Nginx
 
 * DB
-・MySQL 5.7
+  * MySQL 5.7
 
 * インフラ・開発環境等
-・Docker/docker-compose
-・AWS
-・Capistrano3
-・RSpec
+  * Docker/docker-compose
+  * AWS
+  * Capistrano3
+  * RSpec
 
 ## 実装機能
 * ユーザー機能
@@ -48,5 +51,3 @@
 * 検索機能
   * あいまい検索
 * かんたんログイン機能
-
-## 制作背景
