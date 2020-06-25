@@ -4,7 +4,7 @@
       <% if @user.image? %>
         <img src='<%= @user.image.url %>' class="rounded-circle user_top__icon--image" alt="ユーザーアイコン">
       <% else %>
-        <img src="/assets/default.png" class="rounded-circle user_top__icon--image" alt="ユーザーアイコン">
+        <%= image_tag asset_path('default.png'), class: "rounded-circle user_top__icon--image", alt: "ユーザーアイコン" %>
       <% end %>
     </div>
     <div class="col-sm-12 col-md-7 user_top__item">
