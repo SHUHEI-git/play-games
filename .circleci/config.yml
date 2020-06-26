@@ -5,9 +5,17 @@ jobs:
       - image: circleci/ruby:2.5.3-node-browsers
         environment:
           RAILS_ENV: test
+          MYSQL_HOST: 127.0.0.1
+          MYSQL_USERNAME: 'root'
+          MYSQL_PASSWORD: ''
+          MYSQL_PORT: 4306
       - image: circleci/mysql:5.7-ram
         environment:
           MYSQL_ALLOW_EMPTY_PASSWORD: true
+          MYSQL_USER: 'root'
+          MYSQL_PASSWORD: ''
+          MYSQL_ROOT_PASSWORD: 'password1112'
+          MYSQL_DATABASE: 'app_name_test'
     working_directory: ~/circleci-example-for-rails
     steps:
       - checkout
@@ -26,7 +34,7 @@ jobs:
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
       # Database setup
-      - run: mv ./config/database.yml.ci ./config/database.yml
+      # - run: mv ./config/database.yml.ci ./config/database.yml
       - run: dockerize -wait tcp://127.0.0.1:3306 -timeout 1m
       - run:
           name: Prepare db
