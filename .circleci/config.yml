@@ -33,21 +33,21 @@ jobs:
           - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
-      # Database setup
-      # - run: mv ./config/database.yml.ci ./config/database.yml
-      - run: dockerize -wait tcp://127.0.0.1:3306 -timeout 1m
-      - run:
-          name: Prepare db
-          command: |
-            bundle exec rake db:create db:schema:load --trace
+      # # Database setup
+      # # - run: mv ./config/database.yml.ci ./config/database.yml
+      # - run: dockerize -wait tcp://127.0.0.1:3306 -timeout 1m
+      # - run:
+      #     name: Prepare db
+      #     command: |
+      #       bundle exec rake db:create db:schema:load --trace
 
-      # run tests!
-      - run:
-          name: Run rspec
-          command: |
-            mkdir /tmp/test-results
-            TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
-            bundle exec rspec --format progress --color --format documentation
+      # # run tests!
+      # - run:
+      #     name: Run rspec
+      #     command: |
+      #       mkdir /tmp/test-results
+      #       TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
+      #       bundle exec rspec --format progress --color --format documentation
 
       # collect reports
       - store_test_results:
