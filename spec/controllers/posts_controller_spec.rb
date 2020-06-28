@@ -47,7 +47,7 @@ describe PostsController, type: :controller do
     it 'edit.html.erbに遷移すること' do
       user = create(:user)
       sign_in user
-      post = create(:post)
+      post = create(:post, user_id: user.id)
       get :edit, params: { id: post }
       expect(response).to render_template :edit
     end
