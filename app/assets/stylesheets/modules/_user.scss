@@ -104,3 +104,22 @@
     }
   }
 }
+
+.show_follower {
+  padding: 10px 0;
+  border-bottom: 1px #dee2e6 solid;
+  display: flex;
+  justify-content: space-between;
+  & a {
+    color: $title-color;
+    text-decoration: none;
+  }
+  &__user_icon {
+    width: 70px;
+    height: 70px;
+  }
+  &__follow-btn {
+    display: flex;
+    align-items: center;
+  }
+}
