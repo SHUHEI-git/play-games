@@ -10,6 +10,15 @@
     <div class="col-sm-12 col-md-7 user_top__item">
       <p class="user_top__item__name"><%= @user.name %></p>
       <p><%= "フレンドコード：#{@user.friend_code}" %></p>
+      <% if logged_in? && @user != current_user%>
+        <div id="follow_form">
+          <% if current_user.following?(@user) %>
+            <%= render "unfollow" %>
+          <% else %>
+            <%= render "follow" %>
+          <% end %>
+        </div>
+      <% end %>
       <% if user_signed_in? && current_user.id == @user.id %>
         <%= link_to edit_user_registration_path, method: :get, class: "user_top__item__edit" do %>
           <p>編集</p>
